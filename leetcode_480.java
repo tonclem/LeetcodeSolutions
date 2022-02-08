@@ -1,6 +1,5 @@
-public class{
-
-  public double[] medianSlidingWindow(int[] nums, int k) {
+class Solution {
+    public double[] medianSlidingWindow(int[] nums, int k) {
         
         int currentArraylength = nums.length;
         int counter = 0;
@@ -32,7 +31,10 @@ public class{
                     System.out.println(" -- Not Even");
                     median = sortingList.get(sortingList.size()/2);
                 }
-                 result.add(Double.parseDouble(String.valueOf(median)));
+                
+                double res = median;
+                result.add(res);
+                
                 System.out.println(sortingList.size() +" -- SortedListSize");
                 System.out.println(median +" -- Median");
 
@@ -41,10 +43,10 @@ public class{
             currentArraylength --;
             counter++;
         }
-        double[] myArray = new double[result.size()];
-        result.toArray(new double[][]{myArray});
+        
+         double[] myArray = new double[result.size()];
+        for(int i = 0; i < result.size(); i++) myArray[i] = result.get(i);
         return myArray;
         
     }
-
 }
